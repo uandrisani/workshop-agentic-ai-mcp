@@ -1,0 +1,7 @@
+langchain
+langchain-core
+langchain-ollama
+langchain-community
+langchain-mcp-adapters
+python-dotenv
+fastmcp
