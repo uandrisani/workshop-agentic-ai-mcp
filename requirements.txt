@@ -5,3 +5,4 @@ langchain-community
 langchain-mcp-adapters
 python-dotenv
 fastmcp
+fastmcp[code-mode]

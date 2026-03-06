@@ -26,7 +26,7 @@ async def main():
         "default": {
             "transport": "stdio",
             "command": "fastmcp",
-            "args": ["run", "./mcp/logistics_agent.py:mcp", "--transport", "stdio"]
+            "args": ["run", "./mcp_codemode/logistics_agent.py:mcp", "--transport", "stdio"]
         }
     })
 
@@ -36,7 +36,7 @@ async def main():
         "default": {
             "transport": "stdio",
             "command": "fastmcp",
-            "args": ["run", "./mcp/recommendations_agent.py:mcp", "--transport", "stdio"]
+            "args": ["run", "./mcp_codemode/recommendations_agent.py:mcp", "--transport", "stdio"]
         }
     })
 
@@ -48,6 +48,10 @@ async def main():
         When planning trips, use both specialists:
         1. Use plan_logistics_agent to calculate practical details: distances, times, costs, and routes
         2. Use get_recommendations_agent to suggest attractions, restaurants, and activities
+        Pay attention that the MCP server works with "Code Mode", so it won't respond with the previous tools in the list but you will have to:
+        * search for the tool by calling `search` with query name of the tool you need to execute
+        * get the schema of the found tool by calling the `get_schema` tool passing it the found tool as tools
+        * call the tool by calling `execute` with the tool name and the request object as arguments
         Always combine both the practical logistics and exciting recommendations in your final response.""",
         tools=mcp_tools_logistics + mcp_tools_recommendations
     )

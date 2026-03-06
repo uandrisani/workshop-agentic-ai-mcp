@@ -53,3 +53,12 @@ Gli agenti specializzati vengono esposti come server MCP separati e il coordinat
 ```bash
 python mcp/main.py
 ```
+
+### Caso con MCP con CodeMode
+
+Gli agenti specializzati vengono esposti come server MCP separati e il coordinatore li invoca tramite il protocollo MCP via `stdio`.
+A differenza del precedente scenario, in questo viene utilizzato il [CodeMode](https://gofastmcp.com/servers/transforms/code-mode)
+
+```bash
+python mcp_codemode/main.py
+```
